@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript" src='jquery-2.2.3-unzip.js'></script>
+<script type="text/javascript" src="checker.js">
+</script>
+<input type="text" name="x" id="textX">
+<input type="text" name="y" id="textY">
+<script type="text/javascript">
+	new Checker({
+		type: 'post',
+		items: [{
+			ele: '#textX',
+			url: '3.php',
+			key: 'ss',
+			cached: true,
+			beforeCheck: function() {return true;},
+			cb: function(resp) {
+				console.log(resp)
+			}
+			},{
+			ele: '#textY',
+			url: '3.php',
+			key: 'qq',
+			cb: function(resp) {
+				console.log(resp)
+			}
+			}]
+	});
+</script>
+</body>
+</html>
